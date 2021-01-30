@@ -21,8 +21,8 @@
 # ```
 # </details>
 #
-# The script will pick up the graph definition from the mermaid code bloc and render it to the image file and path specified in the
-# image tag using the docker version of mermaid-cli. The rendered image can be in svg or png format, whatever is specified will be generated.
+# The script will pick up the graph definition from the mermaid code block and render it to the image file and path specified in the
+# image tag using mermaid-cli. The rendered image can be in svg or png format, whatever is specified will be generated.
 
 
 if [ "$1" == "" ]; then
