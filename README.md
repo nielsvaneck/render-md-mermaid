@@ -29,7 +29,7 @@ graph LR
 The script will pick up the graph definition from the mermaid code bloc and render it to the image file and path specified in the
 image tag using the docker version of mermaid-cli. The rendered image can be in svg or png format, whatever is specified will be generated. The result is rendered as follows:
 
-![rendered image description](relative/path/to/rendered_image.svg)
+![rendered image description](relative/path/to/rendered_image.png)
 <details>
   <summary>diagram source</summary>
   This details block is collapsed by default when viewed in GitHub. This hides the mermaid graph definition, while the rendered image

@@ -15,6 +15,6 @@ help: ## Show this help
 		{printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 test: render-md-mermaid
-	@ls relative/path/to/rendered_image.svg
+	@ls relative/path/to/rendered_image.png
 
 -include render-md-mermaid.mk
