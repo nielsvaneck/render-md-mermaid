@@ -3,7 +3,7 @@
 #
 # This can be invoked on any Markdown file to render embedded mermaid diagrams, provided they are presented in the following format:
 #
-# ![rendered image description](relative/path/to/rendered_image.svg)
+# ![rendered image description](relative/path/to/rendered_image.png)
 # <details>
 #   <summary>diagram source</summary>
 #   This details block is collapsed by default when viewed in GitHub. This hides the mermaid graph definition, while the rendered image
@@ -11,13 +11,20 @@
 #
 # ```mermaid
 # graph LR
-#     A[README.md] -->|passed to| B
+#     A[README.md]
+#     B{Find mermaid graphs<br>and image paths}
+#     C[[docker mermaid-cli]]
+#     D[[docker mermaid-cli]]
+#     E(Graph 1 png image)
+#     F(Graph 2 svg image)
+#
+#     A -->|passed to| B
 #     subgraph render-md-mermaid.sh
-#     B{Find mermaid graphs<br>and image paths} --> |path/to/image1.png<br>+mermaid source| C[[docker mermaid-cli]]
-#     B --> |path/to/image2.svg<br>+mermaid source| D[[docker mermaid-cli]]
+#       B --> |path/to/image1.png<br>+mermaid source| C
+#       B --> |path/to/image2.svg<br>+mermaid source| D
 #     end
-#     C --> E(Graph 1 png image)
-#     D --> F(Graph 2 svg image)
+#     C --> E
+#     D --> F
 # ```
 # </details>
 #

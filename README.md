@@ -19,13 +19,20 @@ This script can be invoked on any Markdown file to render embedded mermaid diagr
 
 ```mermaid
 graph LR
-    A[README.md] -->|passed to| B
+    A[README.md]
+    B{Find mermaid graphs<br>and image paths}
+    C[[docker mermaid-cli]]
+    D[[docker mermaid-cli]]
+    E(Graph 1 png image)
+    F(Graph 2 svg image)
+
+    A -->|passed to| B
     subgraph render-md-mermaid.sh
-    B{Find mermaid graphs<br>and image paths} --> |path/to/image1.png<br>+mermaid source| C[[docker mermaid-cli]]
-    B --> |path/to/image2.svg<br>+mermaid source| D[[docker mermaid-cli]]
+      B --> |path/to/image1.png<br>+mermaid source| C
+      B --> |path/to/image2.svg<br>+mermaid source| D
     end
-    C --> E(Graph 1 png image)
-    D --> F(Graph 2 svg image)
+    C --> E
+    D --> F
 ```
 </details>
 ~~~
@@ -41,13 +48,20 @@ image tag using [mermaid-cli](https://github.com/mermaid-js/mermaid-cli). The re
 
 ```mermaid
 graph LR
-    A[README.md] -->|passed to| B
+    A[README.md]
+    B{Find mermaid graphs<br>and image paths}
+    C[[docker mermaid-cli]]
+    D[[docker mermaid-cli]]
+    E(Graph 1 png image)
+    F(Graph 2 svg image)
+
+    A -->|passed to| B
     subgraph render-md-mermaid.sh
-    B{Find mermaid graphs<br>and image paths} --> |path/to/image1.png<br>+mermaid source| C[[docker mermaid-cli]]
-    B --> |path/to/image2.svg<br>+mermaid source| D[[docker mermaid-cli]]
+      B --> |path/to/image1.png<br>+mermaid source| C
+      B --> |path/to/image2.svg<br>+mermaid source| D
     end
-    C --> E(Graph 1 png image)
-    D --> F(Graph 2 svg image)
+    C --> E
+    D --> F
 ```
 
 </details>
