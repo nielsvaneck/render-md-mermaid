@@ -1,0 +1,5 @@
+name: 'render-md-mermaid'
+description: 'Renders all mermaid diagrams in all Markdown files in the repository'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

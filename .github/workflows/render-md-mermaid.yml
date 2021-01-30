@@ -10,8 +10,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: render md mermaid
-        run: make build
+      # - name: render md mermaid
+      #   run: make build
+      - name: render-md-mermaid action
+        uses: ./
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
