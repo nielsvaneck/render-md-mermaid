@@ -1,6 +1,10 @@
 # render-md-mermaid
 
-GitHub Action & utility for rendering Mermaid-JS diagrams in MD files for display on GitHub
+Utility for rendering Mermaid-JS diagrams in MD files for display on GitHub. GitHub Action coming soon.
+
+Documentation is good. Diagrams are good. But with all good things, if they are hard to do, we do less of them. This tool makes including Mermaid diagrams in Markdown documents a breeze. It uses a simple trick that hides the diagram source on GitHub and displays a rendered diagram image. Keeping diagrams up-to-date is easy because the diagram source is in the Markdown files. No need to go off to the live-editor and copy things back and forth. 
+
+For a great editing experience (including live-rendering of your mermaid graphs), give [Typora](https://typora.io) a try.
 
 ## render-md-mermaid.sh
 
