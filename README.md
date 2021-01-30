@@ -21,11 +21,11 @@ This script can be invoked on any Markdown file to render embedded mermaid diagr
 graph LR
     A[README.md] -->|passed to| B
     subgraph render-md-mermaid.sh
-    B{Find mermaid graphs<br>and image paths} --> C(docker mermaid-cli)
-    B --> D(docker mermaid-cli)
+    B{Find mermaid graphs<br>and image paths} --> |path/to/image1.png<br>+mermaid source| C[[docker mermaid-cli]]
+    B --> |path/to/image2.svg<br>+mermaid source| D[[docker mermaid-cli]]
     end
-    C -->|path/to/image1.png| E(Graph 1 png image)
-    D -->|path/to/image2.svg| F(Graph 2 svg image)
+    C --> E(Graph 1 png image)
+    D --> F(Graph 2 svg image)
 ```
 </details>
 ~~~
@@ -43,11 +43,11 @@ image tag using the docker version of mermaid-cli. The rendered image can be in 
 graph LR
     A[README.md] -->|passed to| B
     subgraph render-md-mermaid.sh
-    B{Find mermaid graphs<br>and image paths} --> C(docker mermaid-cli)
-    B --> D(docker mermaid-cli)
+    B{Find mermaid graphs<br>and image paths} --> |path/to/image1.png<br>+mermaid source| C[[docker mermaid-cli]]
+    B --> |path/to/image2.svg<br>+mermaid source| D[[docker mermaid-cli]]
     end
-    C -->|path/to/image1.png| E(Graph 1 png image)
-    D -->|path/to/image2.svg| F(Graph 2 svg image)
+    C --> E(Graph 1 png image)
+    D --> F(Graph 2 svg image)
 ```
 
 </details>
