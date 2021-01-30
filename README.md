@@ -20,8 +20,8 @@ graph LR
     B{Find mermaid graphs<br>and image paths} --> C(docker mermaid-cli)
     B --> D(docker mermaid-cli)
     end
-    C -->|path/to/image1.png| E[Graph 1 png image]
-    D -->|path/to/image2.svg| F[Graph 2 svg image]
+    C -->|path/to/image1.png| E(Graph 1 png image)
+    D -->|path/to/image2.svg| F(Graph 2 svg image)
 ```
 </details>
 ~~~
@@ -42,20 +42,20 @@ graph LR
     B{Find mermaid graphs<br>and image paths} --> C(docker mermaid-cli)
     B --> D(docker mermaid-cli)
     end
-    C -->|path/to/image1.png| E[Graph 1 png image]
-    D -->|path/to/image2.svg| F[Graph 2 svg image]
+    C -->|path/to/image1.png| E(Graph 1 png image)
+    D -->|path/to/image2.svg| F(Graph 2 svg image)
 ```
 
 </details>
 
 ## Makefile include
 
-This repo can be used as a submodule[^submodule], and offers `render-md-mermaid.mk` as a Makefile include. See `Makefile` for an example integration.
+This repo can be used as a submodule by running: `git submodule add git@github.com:nielsvaneck/render-md-mermaid.git SUBMODULE/PATH` in the root of your git repository.
+
+It offers `render-md-mermaid.mk` as a Makefile include. See `Makefile` for an example integration.
 
 Once `render-md-mermaid.mk` is included, `make render-md-mermaid` will invoke the `render-md-mermaid.sh` script on all Markdown files in the repository and write rendered diagrams to the specified image files.
 
 ## GitHub Action
 
 WIP
-
-[^submodule]: To add this repo as a git submodule, run: `git submodule add git@github.com:nielsvaneck/render-md-mermaid.git SUBMODULE/PATH` in the root of your git repository.

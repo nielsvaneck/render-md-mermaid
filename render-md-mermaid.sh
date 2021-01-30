@@ -16,8 +16,8 @@
 #     B{Find mermaid graphs<br>and image paths} --> C(docker mermaid-cli)
 #     B --> D(docker mermaid-cli)
 #     end
-#     C -->|path/to/image1.png| E[Graph 1 png image]
-#     D -->|path/to/image2.svg| F[Graph 2 svg image]
+#     C -->|path/to/image1.png| E(Graph 1 png image)
+#     D -->|path/to/image2.svg| F(Graph 2 svg image)
 # ```
 # </details>
 #
