@@ -1,14 +1,10 @@
 # render-md-mermaid
 
-Utility for rendering Mermaid-JS diagrams in MD files for display on GitHub. GitHub Action coming soon.
+A GitHub Action and utility for rendering Mermaid-JS diagrams in MD files for display on GitHub.
 
 Documentation is good. Diagrams are good. But with all good things, if they are hard to do, we do less of them. [Mermaid](https://mermaid-js.github.io/mermaid/#/) makes it very easy to create diagrams and this tool makes using Mermaid diagrams in Markdown documents a breeze. It is inspired by Typora's Mermaid support and uses a simple trick that hides the diagram source and display a rendered diagram image instead. Keeping diagrams up-to-date is easy because the diagram source is in the Markdown file. No need to go off to the live-editor and copy things back and forth.
 
-For a great Markdown reading / editing experience (including live-rendering of your mermaid graphs), give [Typora](https://typora.io) a try!
-
-## render-md-mermaid.sh
-
-This script can be invoked on any Markdown file to render embedded mermaid diagrams, provided they are presented in the following format:
+`render-md-mermaid` will pick up any Mermaid graph in Markdown files that is defined as follows:
 
 ~~~markdown
 ![rendered image description](relative/path/to/rendered_image. svg or png )
@@ -66,6 +62,49 @@ graph LR
 
 </details>
 
+When using the GitHub Action, this will automatically happen for every Markdown file in the repository.
+
+For a great Markdown reading / editing experience (including live-rendering of your mermaid graphs), give [Typora](https://typora.io) a try!
+
+## GitHub Action
+
+Include the following GitHub Action workflow definition in your project to automatically render and commit images from Mermaid diagrams in your Markdown files.
+
+```yaml
+# .github/workflows/render-md-mermaid.yml
+
+name: render-md-mermaid
+
+on: push
+
+jobs:
+  render-md-mermaid:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: render-md-mermaid action
+        uses: nielsvaneck/render-md-mermaid@v1
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: '**/*.png **/*.svg'
+          commit_message: automatically rendered mermaid diagrams
+```
+
+## render-md-mermaid.sh
+
+The script can be invoked on any Markdown file to render embedded mermaid diagrams, provided they are presented in the format described above.
+
+```shell
+$ ./render-md-mermaid.sh README.md
+Markdown file: README.md
+Generated: ./relative/path/to/rendered_image.png
+
+```
+
 ## Makefile include
 
 This repo can be used as a submodule by running: `git submodule add git@github.com:nielsvaneck/render-md-mermaid.git SUBMODULE/DIRECTORY` in the root of your git repository.
@@ -73,7 +112,3 @@ This repo can be used as a submodule by running: `git submodule add git@github.c
 It offers `render-md-mermaid.mk` as a Makefile include. See `Makefile` for an example integration.
 
 Once `render-md-mermaid.mk` is included, `make render-md-mermaid` will invoke the `render-md-mermaid.sh` script on all Markdown files in the repository and write rendered diagrams to the specified image files.
-
-## GitHub Action
-
-WIP
