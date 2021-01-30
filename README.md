@@ -4,7 +4,7 @@ A GitHub Action and utility for rendering Mermaid-JS diagrams in MD files for di
 
 Documentation is good. Diagrams are good. But with all good things, if they are hard to do, we do less of them. [Mermaid](https://mermaid-js.github.io/mermaid/#/) makes it very easy to create diagrams and this tool makes using Mermaid diagrams in Markdown documents a breeze. It is inspired by Typora's Mermaid support and uses a simple trick that hides the diagram source and display a rendered diagram image instead. Keeping diagrams up-to-date is easy because the diagram source is in the Markdown file. No need to go off to the live-editor and copy things back and forth.
 
-`render-md-mermaid` will pick up any Mermaid graph in Markdown files that is defined as follows:
+`render-md-mermaid` will pick up any Mermaid graph in Markdown files that is defined as:
 
 ~~~markdown
 ![rendered image description](relative/path/to/rendered_image. svg or png )
@@ -34,7 +34,7 @@ graph LR
 ~~~
 
 The script will pick up the graph definition from the mermaid code block and render it to the image file and path specified in the
-image tag using [mermaid-cli](https://github.com/mermaid-js/mermaid-cli). The rendered image can be in svg or png format, whatever is specified will be generated. The result is rendered as follows:
+image tag using [mermaid-cli](https://github.com/mermaid-js/mermaid-cli). The rendered image can be in svg or png format, whatever is specified will be generated. The result is rendered like this:
 
 ![rendered image description](relative/path/to/rendered_image.png)
 <details>
