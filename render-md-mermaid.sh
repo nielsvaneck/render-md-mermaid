@@ -70,6 +70,7 @@ do
     mermaid_file=${mermaid_img#*|}
     if [[ "$2" == "in-container" ]]; then
         /usr/local/bin/mmdc -p /puppeteer-config.json -o "$image_file" -i "$mermaid_file" -t neutral -C ".render-md-mermaid.css" -c ".render-md-mermaid-config.json" -s 4
+        touch "$image_file.created"
     else
         docker run --rm -t -v "$PWD:/data" minlag/mermaid-cli:latest -o "/data/$image_file" -i "/data/$mermaid_file" -t neutral -C "/data/.render-md-mermaid.css" -c "/data/.render-md-mermaid-config.json" -s 4
     fi
