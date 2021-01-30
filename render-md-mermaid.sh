@@ -63,8 +63,8 @@ do
     mermaid_file=${mermaid_img#*|}
     docker run --rm -t -v "$PWD:/data" minlag/mermaid-cli:latest -o "/data/$image_file" -i "/data/$mermaid_file" -t neutral -C "/data/.render-md-mermaid.css" -c "/data/.render-md-mermaid-config.json" -s 4
     if [[ "$image_file" =~ ^.*\.svg$ ]]; then
-        sed -i ".bak" -e 's/<br>/<br\/>/g' $image_file
+        sed -i.bak -e 's/<br>/<br\/>/g' $image_file
     fi
-    rm "$mermaid_file" "$image_file.bak"
+    rm -f "$mermaid_file" "$image_file.bak"
 done
-rm .render-md-mermaid-config.json .render-md-mermaid.css
+rm -f .render-md-mermaid-config.json .render-md-mermaid.css
