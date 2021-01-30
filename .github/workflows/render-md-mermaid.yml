@@ -1,0 +1,18 @@
+name: render-md-mermaid
+
+on: push
+
+jobs:
+  render-md-mermaid:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: render md mermaid
+        run: make build
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: automatically rendered mermaid diagram
