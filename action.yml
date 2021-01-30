@@ -1,6 +1,7 @@
 name: 'render-md-mermaid'
 branding:
   icon: image
+  color: white
 description: 'Renders all mermaid diagrams in all Markdown files in the repository'
 runs:
   using: 'docker'
