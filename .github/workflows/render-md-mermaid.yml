@@ -14,6 +14,8 @@ jobs:
         uses: ./
 
       - run: git status
+      - run: git status -s -- '*[.svg .png]'
+      - run: git status -s -- *[.svg .png]
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
