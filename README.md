@@ -86,7 +86,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: render-md-mermaid action
-        uses: nielsvaneck/render-md-mermaid@v2
+        uses: nielsvaneck/render-md-mermaid@1
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
