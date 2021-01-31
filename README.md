@@ -44,7 +44,7 @@ image tag using [mermaid-cli](https://github.com/mermaid-js/mermaid-cli). The re
 
 ```mermaid
 graph LR
-    A[README.md]
+    A[README.md<br>with Mermaid diagram]
     B{Find mermaid graphs<br>and image paths}
     C[[docker mermaid-cli]]
     D[[docker mermaid-cli]]
@@ -86,7 +86,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: render-md-mermaid action
-        uses: nielsvaneck/render-md-mermaid@1
+        uses: nielsvaneck/render-md-mermaid@v2
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
