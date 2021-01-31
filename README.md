@@ -90,7 +90,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Render images for every Mermaid diagram in all Markdown files (*.md) in the repo
-        uses: nielsvaneck/render-md-mermaid@1
+        uses: nielsvaneck/render-md-mermaid@v1
 
       - name: Commit rendered png and svg files
         uses: stefanzweifel/git-auto-commit-action@v4
