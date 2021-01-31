@@ -13,6 +13,7 @@ jobs:
       - name: Render images for every Mermaid diagram in all Markdown files (*.md) in the repo.
         uses: ./
 
+      - name: Commit rendered png and svg files
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           file_pattern: "*[.svg,.png]"
