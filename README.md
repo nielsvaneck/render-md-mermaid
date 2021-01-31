@@ -1,5 +1,7 @@
 # render-md-mermaid
 
+<a href="https://github.com/search?o=desc&q=nielsvaneck%2Frender-md-mermaid+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Utility" target="_blank" title="Public workflows that use this action."><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fapi-git-master.endbug.vercel.app%2Fapi%2Fgithub-actions%2Fused-by%3Faction%3Dnielsvaneck%2Frender-md-mermaid%26badge%3Dtrue" alt="Public workflows that use this action."></a>
+
 A GitHub Action and utility for rendering Mermaid-JS diagrams in MD files for display on GitHub.
 
 Documentation is good. Diagrams are good. But with all good things, if they are hard to do, we do less of them. [Mermaid](https://mermaid-js.github.io/mermaid/#/) makes it very easy to create diagrams and this tool makes using Mermaid diagrams in Markdown documents a breeze. It is inspired by Typora's Mermaid support and uses a simple trick that hides the diagram source and display a rendered diagram image instead. Keeping diagrams up-to-date is easy because the diagram source is in the Markdown file. No need to go off to the live-editor and copy things back and forth.
@@ -39,8 +41,10 @@ image tag using [mermaid-cli](https://github.com/mermaid-js/mermaid-cli). The re
 ![rendered image description](relative/path/to/rendered_image.png)
 <details>
   <summary>diagram source</summary>
-  This details block is collapsed by default when viewed in GitHub. This hides the mermaid graph definition, while the rendered image
-  linked above is shown. The details tag has to follow the image tag. (newlines allowed)
+  This details block is collapsed by default when viewed in GitHub.
+  This hides the mermaid graph definition, while the rendered image
+  linked above is shown.
+  The details tag has to follow the image tag. (newlines allowed)
 
 ```mermaid
 graph LR
@@ -85,7 +89,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: render-md-mermaid action
+      - name: Render images for every Mermaid diagram in all Markdown files (*.md) in the repo.
         uses: nielsvaneck/render-md-mermaid@1
 
       - uses: stefanzweifel/git-auto-commit-action@v4

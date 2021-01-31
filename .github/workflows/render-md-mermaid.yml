@@ -10,7 +10,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: render-md-mermaid action
+      - name: Render images for every Mermaid diagram in all Markdown files (*.md) in the repo.
         uses: ./
 
       - uses: stefanzweifel/git-auto-commit-action@v4
