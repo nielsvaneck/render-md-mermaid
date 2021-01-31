@@ -13,11 +13,7 @@ jobs:
       - name: render-md-mermaid action
         uses: ./
 
-      - run: git status
-      - run: git status -s -- '*[.svg .png]'
-      - run: git status -s -- *[.svg .png]
-
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          file_pattern: '*[.svg .png]'
+          file_pattern: "'*[.svg .png]'"
           commit_message: automatically rendered mermaid diagrams
