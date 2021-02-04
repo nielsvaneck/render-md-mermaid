@@ -38,7 +38,7 @@ graph LR
 ~~~
 
 The script will pick up the graph definition from the mermaid code block and render it to the image file and path specified in the
-image tag using [mermaid-cli](https://github.com/mermaid-js/mermaid-cli). The rendered image can be in svg or png format, whatever is specified will be generated. The result is rendered like this:
+image tag using [mermaid-cli](https://github.com/mermaid-js/mermaid-cli). The rendered image can be in svg or png format, whatever is specified will be generated. The result is displayed like this:
 
 ![rendered image description](relative/path/to/rendered_image.png)
 <details>
