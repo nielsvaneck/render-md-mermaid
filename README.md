@@ -73,7 +73,7 @@ When using the GitHub Action, this will automatically happen for every Markdown 
 
 For a great Markdown reading / editing experience (including live-rendering of your mermaid graphs), give [Typora](https://typora.io) a try!
 
-## GitHub Action
+## GitHub Action / Workflow example
 
 Include the following GitHub Action workflow definition in your project to automatically render and [commit](https://github.com/stefanzweifel/git-auto-commit-action) images from Mermaid diagrams in your Markdown files.
 
