@@ -31,7 +31,7 @@
 # The script will pick up the graph definition from the mermaid code block and render it to the image file and path specified in the
 # image tag using mermaid-cli. The rendered image can be in svg or png format, whatever is specified will be generated.
 
-
+set -eu
 if [ "$1" == "" ]; then
   echo "$(tput setaf 1)No Markdown document specified$(tput sgr0)"
   echo ""
