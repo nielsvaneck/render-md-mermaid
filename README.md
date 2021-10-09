@@ -51,7 +51,7 @@ image tag using [mermaid-cli](https://github.com/mermaid-js/mermaid-cli). The re
 
 ```mermaid
 graph LR
-    A[README.md<br>with Mermaid diagram]
+    A[README.md<br>with Mermaid diagram - This is the second use]
     B{Find mermaid graphs<br>and image paths}
     C[[docker mermaid-cli]]
     D[[docker mermaid-cli]]
