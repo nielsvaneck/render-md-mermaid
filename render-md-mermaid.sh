@@ -50,6 +50,7 @@ echo "$mermaid_css" >> .render-md-mermaid.css
 
 mermaid_file=""
 IFS=$'\n'
+markdown_input_dir="${markdown_input%/*}"
 for line in $(perl -0777 -ne 'while(m/!\[.*?\]\(([^\)]+)\)\n+<details>([\s\S]*?)```mermaid\n([\s\S]*?)\n```/g){print "$1\n$3\n";} ' "$markdown_input")
 do
     if [[ $line =~ $image_re ]]; then
@@ -77,6 +78,8 @@ do
         sed -i.bak -e 's/<br>/<br\/>/g' $image_file
     fi
     echo "Generated: $image_file"
+    echo move "$image_file" to "$markdown_input_dir/$image_file"
+    mv "$image_file" "$markdown_input_dir/$image_file"
     rm -f "$mermaid_file" "$image_file.bak"
 done
 rm -f .render-md-mermaid-config.json .render-md-mermaid.css
