@@ -75,6 +75,7 @@ do
     fi
     if [[ "$image_file" =~ ^.*\.svg$ ]]; then
         sed -i.bak -e 's/<br>/<br\/>/g' $image_file
+        sed -i -e 's/mermaid-[0-9]*/mermaid/g' $image_file
     fi
     echo "Generated: $image_file"
     rm -f "$mermaid_file" "$image_file.bak"
