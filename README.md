@@ -82,7 +82,10 @@ Include the following GitHub Action workflow definition in your project to autom
 
 name: render-md-mermaid
 
-on: push
+on:
+  push:
+    paths:
+      - '**.md'
 
 jobs:
   render-md-mermaid:
