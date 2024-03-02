@@ -38,6 +38,9 @@ if [ "$1" == "" ]; then
   cat $0 | grep -E "^#" | grep -Ev "^#!/" | sed -E 's/^#[ ]?//'
   exit 1
 fi
+DEFAULT_VALUE=''
+Param2=${2:-$DEFAULT_VALUE}
+
 markdown_input=$1
 image_re=".*\.(svg|png)$"
 echo "Markdown file: $markdown_input"
@@ -69,7 +72,8 @@ for mermaid_img in $(find . -name "*.mermaid" | sed -E 's/((.*).mermaid)/\2|\1/'
 do
     image_file=${mermaid_img%|*}
     mermaid_file=${mermaid_img#*|}
-    if [[ "$2" == "in-container" ]]; then
+    #we check the second parameter (that might be unchecked)
+    if [[ "$Param2" == "in-container" ]]; then
         /home/mermaidcli/node_modules/.bin/mmdc -p /puppeteer-config.json -o "$image_file" -i "$mermaid_file" -t neutral -C ".render-md-mermaid.css" -c ".render-md-mermaid-config.json" -s 4
     else
         docker run --rm -t -v "$PWD:/data" minlag/mermaid-cli:latest -o "/data/$image_file" -i "/data/$mermaid_file" -t neutral -C "/data/.render-md-mermaid.css" -c "/data/.render-md-mermaid-config.json" -s 4
